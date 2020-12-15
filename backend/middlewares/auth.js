@@ -1,15 +1,13 @@
 const jwt = require('jsonwebtoken');
-const BadAuthorizationError = require("../errors/bad-authorization-err");
+const BadAuthorizationError = require('../errors/bad-authorization-err');
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const handleAuthError = (res) => {
   throw new BadAuthorizationError('Необходима авторизация');
-}
-
-const extractBearerToken = (header) => {
-  return header.replace('Bearer ', '');
 };
+
+const extractBearerToken = (header) => header.replace('Bearer ', '');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;

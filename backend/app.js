@@ -6,6 +6,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const { errors } = require('celebrate');
 const usersRouter = require('./routes/users.js');
 const cardsRouter = require('./routes/cards.js');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -16,7 +17,6 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useCreateIndex: true,
   useUnifiedTopology: true,
 });
-
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -35,9 +35,11 @@ app.use(errors()); // обработчик ошибок celebrate
 app.use((err, req, res, next) => {
   const { statusCode = 500, message } = err;
 
-  res.status(statusCode).send({ message: statusCode === 500
+  res.status(statusCode).send({
+    message: statusCode === 500
       ? 'На сервере произошла ошибка'
-      : message });
+      : message,
+  });
 });
 
 app.listen(PORT, () => {
