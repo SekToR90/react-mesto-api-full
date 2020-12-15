@@ -1,0 +1,15 @@
+.authorization__login-link{
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.authorization__login-link:hover {
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}

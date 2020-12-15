@@ -1,0 +1,14 @@
+@import url(./__container/page__container.css);
+
+.page {
+    background-color: #000000;
+    padding-bottom: 60px;
+    padding-top: 45px;
+}
+
+@media screen and (max-width: 680px) {
+    .page {
+        padding-bottom:36px;
+        padding-top: 28px;
+    }
+}

@@ -1,0 +1,10 @@
+.profile__edit-avatar {
+    position: relative;
+    background-color: #000;
+    border: none;
+    padding: 0;
+}
+
+.profile__edit-avatar:focus {
+    outline: none;
+}

@@ -1,0 +1,17 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/element/element.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/modal/modal.css);
+@import url(./blocks/modal/_open/modal_open.css);
+@import url(./blocks/element/__like/_active/element__like_active.css);
+@import url(./blocks/modal/__input/_type/modal__input_type_error.css);
+@import url(./blocks/modal/__button-save/_disabled/modal__button-save_disabled.css);
+@import url(./blocks/element/__delete/_inactive/element__delete_inactive.css);
+@import url(./blocks/authorization/authorization.css);
+@import url(./blocks/info/info.css);
+

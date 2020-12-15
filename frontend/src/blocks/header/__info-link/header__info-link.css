@@ -1,0 +1,15 @@
+.header__info-link {
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header__info-link:hover {
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}

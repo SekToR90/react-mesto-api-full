@@ -1,0 +1,9 @@
+.modal__close {
+    transform: rotate(45deg);
+    background-size: cover;
+}
+
+.modal__close:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.authorization__button {
+    border-radius: 2px;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 216px;
+    border: none;
+    padding: 13px 0 18px;
+    background-color: #ffffff;
+}
+
+.authorization__button:hover {
+    background: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+}

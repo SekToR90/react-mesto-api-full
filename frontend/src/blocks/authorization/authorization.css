@@ -1,0 +1,12 @@
+@import url(./__title/authorization__title.css);
+@import url(./__field/authorization__field.css);
+@import url(./__input/authorization__input.css);
+@import url(./__button/authorization__button.css);
+@import url(./__question/authorization__question.css);
+@import url(./__subtitle/authorization__subtitle.css);
+@import url(./__login-link/authorization__login-link.css);
+
+.authorization {
+    margin: 60px auto;
+    max-width: 358px;
+}

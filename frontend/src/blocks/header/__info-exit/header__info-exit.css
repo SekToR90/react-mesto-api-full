@@ -1,0 +1,20 @@
+.header__info-exit {
+    margin-left: 24px;
+    padding: 0;
+    width: 56px;
+    height: 22px;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    color: #A9A9A9;
+    background-color: #000000;
+    border: none;
+}
+
+.header__info-exit:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

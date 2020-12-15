@@ -1,0 +1,25 @@
+@import url(./_disabled/modal__button-save_none.css);
+
+.modal__button-save {
+    margin-top: 48px;
+    border: none;
+    padding: 13px 0 18px;
+    background: #000000;
+    border-radius: 2px;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.modal__button-save:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.modal__button-save:focus {
+    outline: none;
+  }

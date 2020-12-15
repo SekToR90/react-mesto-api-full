@@ -1,0 +1,20 @@
+@import url(./__logo/header__logo.css);
+@import url(./__info/header__info.css);
+@import url(./__info-email/header__info-email.css);
+@import url(./__info-exit/header__info-exit.css);
+@import url(./__info-link/header__info-link.css);
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 882px;
+    margin: 0 auto 0;
+    border-bottom: 1px solid #545454b3;
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        max-width: 882px;
+    }
+}

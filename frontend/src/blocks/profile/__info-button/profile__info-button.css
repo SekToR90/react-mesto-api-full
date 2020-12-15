@@ -1,0 +1,11 @@
+.profile__info-button {
+    display: flex;
+    width: 336px;
+}
+
+@media screen and (max-width: 680px) {
+    .profile__info-button {
+        width: 219px;
+        justify-content: space-between;
+    }
+}

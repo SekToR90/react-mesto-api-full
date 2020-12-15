@@ -1,0 +1,14 @@
+.modal__close-button {
+    position: absolute;
+    transform: rotate(45deg);
+    top: -47px;
+    right: -45px;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.modal__close-button:focus {
+    outline: none;
+  }
+

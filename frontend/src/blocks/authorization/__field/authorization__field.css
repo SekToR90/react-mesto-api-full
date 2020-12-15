@@ -1,0 +1,5 @@
+.authorization__field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

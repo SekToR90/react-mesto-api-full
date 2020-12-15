@@ -1,0 +1,21 @@
+.authorization__input {
+    border: none;
+    font-family: 'Inter', ‘Arial’, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: #000000;
+    margin: 30px 0 0;
+    border-bottom: 2px solid #CCCCCC;
+    color: #CCCCCC;
+}
+
+.authorization__input:first-child {
+    margin: 50px 0 0 0;
+}
+
+.authorization__input:-webkit-autofill {
+    -webkit-text-fill-color: #CCCCCC;
+    -webkit-box-shadow: 0 0 0px 1000px #000000 inset;
+}
