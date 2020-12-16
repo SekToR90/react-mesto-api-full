@@ -23,6 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(requestLogger); // подключаем логгер запросов
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+}); //удалить после
+
 app.use('/', usersRouter, cardsRouter);
 app.use('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });

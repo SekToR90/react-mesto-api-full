@@ -137,9 +137,9 @@
 
 
 const api = new Api({
-    url: 'https://mesto.nomoreparties.co/v1/cohort-15',
+    url: 'https://api.mesto.sektor.students.nomoredomains.icu',
     headers: {
-        authorization: '179efea0-82b8-4273-a721-e2de6a729aed',
+        authorization: 'Bearer ${localStorage.getItem(\'jwt\')}',
         'Content-type': 'application/json'
     }
 });
