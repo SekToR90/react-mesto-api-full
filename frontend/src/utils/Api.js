@@ -139,7 +139,7 @@
 const api = new Api({
     url: 'https://api.mesto.sektor.students.nomoredomains.icu',
     headers: {
-        authorization: 'Bearer ${localStorage.getItem(\'jwt\')}',
+        authorization: `Bearer ${localStorage.getItem('jwt')}` ,
         'Content-type': 'application/json'
     }
 });
