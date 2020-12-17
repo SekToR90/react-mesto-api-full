@@ -87,7 +87,7 @@
 
     //Запрос на лайк карточки
     putLikeCards(id) {
-        return fetch(`${this.url}/cards/likes/${id}`, {
+        return fetch(`${this.url}/cards/${id}/likes`, {
             method: 'PUT',
             headers: this.headers,
         })
@@ -101,7 +101,7 @@
 
     //Запрос на снятие лайка
     deleteLikeCards(id) {
-        return fetch(`${this.url}/cards/likes/${id}`, {
+        return fetch(`${this.url}/cards/${id}/likes`, {
             method: 'DELETE',
             headers: this.headers,
         })

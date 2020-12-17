@@ -11,27 +11,14 @@ router.get('/users/:_id', auth, getUser); // возвращает пользов
 
 router.patch('/users/me', auth, celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
     name: Joi.string().required().min(2).max(30),
-    avatar: Joi.string(),
     about: Joi.string().min(2).max(30),
-  }),
-  params: Joi.object().keys({
-    _id: Joi.string().required().alphanum().length(24),
   }),
 }), updateUser); // обновляет профиль
 
 router.patch('/users/me/avatar', auth, celebrate({
   body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
-    name: Joi.string().required().min(2).max(30),
     avatar: Joi.string(),
-    about: Joi.string().min(2).max(30),
-  }),
-  params: Joi.object().keys({
-    _id: Joi.string().required().alphanum().length(24),
   }),
 }), updateAvatar); // обновляет аватар
 
