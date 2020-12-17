@@ -3,6 +3,7 @@ const express = require('express');
 // Слушаем 3000 порт
 const { PORT = 3000 } = process.env;
 const app = express();
+const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -29,6 +30,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
+app.use(cors());
 app.use('/', usersRouter, cardsRouter);
 app.use('*', (req, res) => {
   res.status(404).send({ message: 'Запрашиваемый ресурс не найден' });
