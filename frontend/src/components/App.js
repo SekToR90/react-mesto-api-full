@@ -143,11 +143,12 @@ function App() {
 
     function handleCardLike({_id, likes}) {
         // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = likes.some(i => i._id === currentUser._id);
+        // todo problem #1
+        const isLiked = likes.some(id => id === currentUser._id);
 
         // Отправляем запрос в API и получаем обновлённые данные карточки
-        api.changeLikeCardStatus(_id, !isLiked).then((newCard) => {
-            debugger;
+        api.changeLikeCardStatus(_id, !isLiked).then(({data: newCard}) => {
+
             // Формируем новый массив на основе имеющегося, подставляя в него новую карточку
             const newCards = cards.map((c) => c._id === _id ? newCard : c);
             // Обновляем стейт
