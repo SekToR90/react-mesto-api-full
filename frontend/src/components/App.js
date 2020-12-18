@@ -112,13 +112,13 @@ function App() {
             })
     }
 
-    const tokenCheck = () => { //Проверяем, есть ли токен
+    const tokenCheck = () => {//Проверяем, есть ли токен
         const jwt =localStorage.getItem('jwt');
         if (jwt) {
             mestoAuth.getContent(jwt)
                 .then((res) =>{
                     if (res) {
-                        setEmail(res.data.email);
+                        setEmail(res.email);
                         setLoggedIn(true);
                         history.push('/');
                     }
@@ -126,6 +126,9 @@ function App() {
                 .catch((err) => {
                     if (err.status === 401) {
                         console.log(err.statusText);
+                    }
+                    else {
+                        throw err;
                     }
                 });
         }
@@ -144,6 +147,7 @@ function App() {
 
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(_id, !isLiked).then((newCard) => {
+            debugger;
             // Формируем новый массив на основе имеющегося, подставляя в него новую карточку
             const newCards = cards.map((c) => c._id === _id ? newCard : c);
             // Обновляем стейт
@@ -204,20 +208,23 @@ function App() {
     //
 
     const userInfo = (data) => {
-        setCurrentUser({
-            name: data.name,
-            about: data.about,
-            avatar: data.avatar,
-            _id: data._id
-        });
+        api.getUserMe()
+            .then((data) => {
+                setCurrentUser({
+                    name: data.name,
+                    about: data.about,
+                    avatar: data.avatar,
+                    _id: data._id
+                });
+            })
     }
 
     const handleUpdateUser = (value) => {
         api.patchUsersMe(value)
             .then((data) => {
-                userInfo(data);
-                closeAllPopups();
-            })
+                        userInfo(data);
+                        closeAllPopups();
+                    })
             .catch((err) => {
                 console.log(err);
             });
