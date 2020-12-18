@@ -6,6 +6,6 @@
 
 #### Frontend: https://www.mesto.sektor.students.nomoredomains.icu/
 
-#### Backend: https://api.www.mesto.sektor.students.nomoredomains.icu/
+#### Backend: https://www.api.mesto.sektor.students.nomoredomains.icu/
 
 Публичный IP-адрес сервера: 178.154.246.195
