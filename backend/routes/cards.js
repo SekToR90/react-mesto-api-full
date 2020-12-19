@@ -10,7 +10,7 @@ router.get('/cards', auth, getCards); // возвращает все карто�
 router.post('/cards', auth, celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
-    link: Joi.string().required(),
+    link: Joi.string().required().pattern(/^https?:\/\/(www\.)?[\w\-\/\.a-z#?]{1,}/i),
   }),
 }), createCards); // создаёт карточку
 

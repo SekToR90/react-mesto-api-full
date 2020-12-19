@@ -18,12 +18,14 @@ module.exports.getUser = (req, res, next) => {
   const { _id } = req.params;
   User.findOne({ _id })
     .then((user) => {
-      if (!user) {
-        throw new NotFoundError('Нет пользователя с таким id');
-      }
       res.send(user);
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        return next(new NotFoundError('Нет пользователя с таким id'));
+      }
+      next(err);
+    });
 };
 
 module.exports.getUserInfo = (req, res, next) => { // возвращает информацию о текущем пользователе

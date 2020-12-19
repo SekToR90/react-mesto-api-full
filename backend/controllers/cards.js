@@ -24,18 +24,15 @@ module.exports.deleteCards = (req, res, next) => {
 
   Card.findById(cardId)
     .then((card) => {
-      if (card.owner.toString() !== req.user._id) {
+      if (!card) {
+        return next(new NotFoundError('Карточка не найдена'));
+      } else if (card.owner.toString() !== req.user._id) {
         return next(new ForbiddenError('Невозможно удалить чужую карточку'));
       }
       Card.findByIdAndRemove(cardId)
         .orFail()
         .then(() => res.send({ data: card }))
-        .catch((err) => {
-          if (err.name === 'CastError') {
-            return next(new NotFoundError('Карточка не найдена'));
-          }
-          next(err);
-        });
+        .catch((err) => next(err));
     });
 };
 
@@ -47,7 +44,7 @@ module.exports.likeCard = (req, res, next) => Card.findByIdAndUpdate(
   .orFail()
   .then((card) => res.send({ data: card }))
   .catch((err) => {
-    if (err.name === 'CastError') {
+    if (err.name === 'DocumentNotFoundError') {
       return next(new NotFoundError('Карточка не найдена'));
     }
     next(err);
@@ -61,7 +58,7 @@ module.exports.dislikeCard = (req, res, next) => Card.findByIdAndUpdate(
   .orFail()
   .then((card) => res.send({ data: card }))
   .catch((err) => {
-    if (err.name === 'CastError') {
+    if (err.name === 'DocumentNotFoundError') {
       return next(new NotFoundError('Карточка не найдена'));
     }
     next(err);

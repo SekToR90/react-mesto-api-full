@@ -12,13 +12,13 @@ router.get('/users/:_id', auth, getUser); // возвращает пользов
 router.patch('/users/me', auth, celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
-    about: Joi.string().min(2).max(30),
+    about: Joi.string().min(2).max(30).required(),
   }),
 }), updateUser); // обновляет профиль
 
 router.patch('/users/me/avatar', auth, celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string(),
+    avatar: Joi.string().pattern(/^https?:\/\/(www\.)?[\w\-\/\.a-z#?]{1,}/i).required(),
   }),
 }), updateAvatar); // обновляет аватар
 
