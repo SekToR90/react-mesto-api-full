@@ -16,8 +16,12 @@ module.exports.getUsers = (req, res, next) => {
 
 module.exports.getUser = (req, res, next) => {
   const { _id } = req.params;
+  console.log(_id);
   User.findOne({ _id })
     .then((user) => {
+      if (!user) {
+        throw new NotFoundError('Нет пользователя с таким id');
+      }
       res.send(user);
     })
     .catch((err) => {
