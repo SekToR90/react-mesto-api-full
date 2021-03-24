@@ -1,4 +1,4 @@
-## react-mesto-api-full
+## "Место"
 <img src="https://github.com/SekToR90/react-mesto-api-full/blob/master/frontend/src/images/mesto-image.jpg" width="1060">
 
 ### О проекте
